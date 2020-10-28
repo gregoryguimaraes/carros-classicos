@@ -1,0 +1,285 @@
+:root{ 
+    /*Variáveis CSS*/
+    --color-background: #f0f0f7;  
+    --color-primary-lighter: #9871f5;
+    --color-primary-light: #916bea;
+    --color-primary: #8257e5;
+    --color-primary-dark: #774dd6;
+    --color-primary-darker: #6842c2;
+    --color-secondary: #04d361;
+ 
+    --color-title-in-primary: #ffffff;
+    --color-text-in-primary: #d4c2ff;
+    --color-text-title: #32264d;
+    --color-text-complement: #9c98a6;
+    --color-text-base: #6a6180;
+    --color-line-in-white: #e6e6f0;
+    --color-input-background: #f8f8fc;
+    --color-button-text: #ffffff;
+    --color-box-base: #ffffff;
+    --color-box-footer: #fafafc;
+    --color-small-info: #c1bccc;
+
+    /*Dark Theme*/
+    --black-dark: #130f0d;
+    --primary-dark: hsl(32, 98%, 56%);
+    --white-dark: #f0f0f9;
+    --brown-dark:  rgb(172, 83, 23);
+    --brown-light-dark: rgb(219, 141, 89);
+    --color-secondary-dark: #b3b3b3;
+    
+
+    /*Tamanho da fonte padrão: 16px, 100%, 1rem*/
+    font-size: 100%; /*controle de medidas rem*/  
+    
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    background-color: var(--color-background);
+}
+.dark-light-theme-img {
+    grid-column: 2;
+
+}
+.dark-light-theme-img img{
+    max-width: 6%;
+    float: right;
+    margin-top: 0.5rem;
+    background-color: var(--color-background);
+}
+
+.titulo {
+    font-family: 'Playfair Display SC';
+    font-size: 6rem;
+    line-height: 1;
+    font-weight: 300;
+    padding: 0 0 2rem 6rem;
+    grid-column: 1;
+    color: var(--color-text-title);
+}
+
+.menu {
+    margin-top: 1rem;
+    background-color: var(--color-primary);
+    grid-column: 2;
+    height: 4rem;
+    max-width: 100%;
+}
+.menu ul {
+    float: right;
+    display: flex;
+    list-style: none;
+}
+.menu ul li {
+    padding: 1.3rem 3rem 0 0;
+}
+.menu ul li a {
+    text-decoration: none;
+    font-family: 'Playfair Display SC';
+    color: var(--color-text-in-primary);
+}
+.menu ul li a:hover{
+    color: var(--color-text-title);
+    transition: .5s;
+}
+
+.img-car-section {
+    margin-left: 2rem;
+    height: 23rem;
+    padding: 5px;
+    overflow: hidden;
+    overflow-y: scroll;
+    cursor: pointer;
+    grid-column: 1;
+    border: 0.1rem solid var(--color-primary-dark);
+    background-color: var(--color-background);
+}
+
+.car-img-lista img {
+    max-width: 100%;   
+}
+
+.img-car-section::-webkit-scrollbar {
+    width: 1.3rem;
+  }
+
+  .img-car-section::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary-dark);
+    border-left: 4px solid var(--color-primary-dark);
+    border-right: 4px solid var(--color-primary-dark);
+  }
+
+  .img-car-section::-webkit-scrollbar-track{
+    width: 1.3rem;
+    background-color: var(--color-text-in-primary);
+  }
+
+.description-car-section {
+    padding: 0px 0px 0px 40px;
+    grid-column: 2;
+}
+
+.description-car-section li p {
+    margin-right: 5rem;
+}
+
+.car-description  {
+    font-family: 'Playfair Display SC';
+}
+.car-description h2 {
+    color: var(--color-text-title);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.car-description h2::before {
+    content: '';
+    display: inline-block;
+    width: 2.5rem;
+    height: 0.6rem;
+    margin-right: 10px;
+    background: var(--color-primary-darker);
+  }
+
+
+.car-description p {
+    font-weight: 300;
+    color: var(--color-text-base);
+}
+
+.faq-section h1 {
+    margin-top: 6rem;
+}
+.faq-list {
+    margin-left: 10rem;
+}
+.faq-list dt{
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+    color: var(--color-primary-lighter);
+    font-weight: 1000;
+    font-family: 'Playfair Display SC';
+    cursor: pointer;
+}
+
+.faq-list dt::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 10px;
+    margin-right: 0.5rem;
+    background: var(--color-primary-darker);
+}
+
+.faq-list dd {
+    font-family: 'Playfair Display SC';
+    font-weight: 300;
+    margin-left: 1.7rem;
+    color: var(--color-text-base);
+}
+
+
+
+.accordion-list dt::after {
+    content: '⬎';   
+    margin-left: 1rem;
+}
+
+.accordion-list dt.ativo::after{
+    content: '⬏';
+}
+
+.accordion-list dd {
+    display: none;
+}
+
+.accordion-list dd.ativo {
+    display: block !important;
+}
+
+.tab-description {
+    display: none;
+}
+.active {
+    display: block !important; 
+    animation: show .5s forwards;
+}
+
+@keyframes show {
+    from {
+      opacity: 0;
+      transform: translate3d(-30px, 0, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+@media only screen and (max-device-width: 900px) {
+    /* .menu { width:100%; } */
+    }
+
+    /*DARK THEME*/
+
+body.dark-theme-ativo {
+    background-color: var(--black-dark);
+}
+
+nav.dark-theme-ativo {
+    background-color: var(--primary-dark);
+}
+
+nav.dark-theme-ativo ul li a{
+    color: var(--black-dark);
+}
+
+nav.dark-theme-ativo ul li a:hover{
+    color: var(--color-text-base);
+}
+
+h1.dark-theme-ativo{
+    color: rgb(172, 83, 23);
+}
+h2.dark-theme-ativo{
+    color: var(--brown-dark);
+}
+p.dark-theme-ativo{
+    color: var(--color-text-complement);
+}
+h2.dark-theme-ativo::before {
+    background: var(--primary-dark);
+  }
+
+.img-car-section.dark-theme-ativo{
+    border: 0.1rem solid var(--color-text-base);
+}
+.img-car-section.dark-theme-ativo::-webkit-scrollbar-thumb {
+    background-color: var(--primary-dark);
+    border-left: 4px solid var(--primary-dark);
+    border-right: 4px solid var(--primary-dark);
+  }
+
+  .img-car-section.dark-theme-ativo::-webkit-scrollbar-track{
+    width: 1.3rem;
+    background-color: var(--color-text-base);
+  }
+
+  .faq-section.dark-theme-ativo dt{
+    color: var(--primary-dark);
+  }
+
+  .faq-section.dark-theme-ativo dt::before{
+      background: var(--primary-dark);
+  }
+  .faq-section.dark-theme-ativo dd {
+      color: var(--color-text-complement);
+  }
